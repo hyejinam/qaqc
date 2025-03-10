@@ -27,6 +27,18 @@ if data is not None:
             selected_date = st.date_input("📆 날짜 선택", farm_data["착유시작일시"].min())
             date_filtered_data = farm_data[farm_data["착유시작일시"].dt.date == selected_date]
 
+ # 🐄 개체번호 검색 방법 및 선택 필터 (한 행에 표시)
+    if not date_filtered_data.empty and "개체번호" in date_filtered_data.columns:
+        col1, col2 = st.columns(2)
+        with col1:
+            search_method = st.radio("개체번호 검색방법", ("선택", "직접 입력"))
+        with col2:
+            if search_method == "선택":
+                selected_animal = st.selectbox("개체번호 선택", date_filtered_data["개체번호"].unique())
+            else:
+                selected_animal = st.text_input("개체번호 입력")
+
+
    # 🥛 유지방, 유단백, 전도도 (총 착유량 대비 비율)
 if not date_filtered_data.empty:
     col1, col2, col3 = st.columns(3)
