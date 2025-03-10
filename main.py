@@ -8,7 +8,7 @@ st.set_page_config(page_title="스마트팜 대시보드", layout="wide")
 pages = {
     "소개": "home.py",
     "Main 대시보드": "kpi.py",
-    "생산관리 대시보드": "health.py",
+    "생산관리 대시보드": "solution.py",
     "품질관리 대시보드": "model.py"
     }
 
