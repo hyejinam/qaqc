@@ -39,6 +39,7 @@ if not date_filtered_data.empty:
         .metric-value {
             font-size: 30px !important;  /* 값 폰트 크기 */
             font-weight: bold;
+            text-align: center;
             color: #000000;  /* 값 색상 (선택 가능) */
         }
         </style>
@@ -86,6 +87,7 @@ if not date_filtered_data.empty:
                     .metric-value {
                         font-size: 30px !important;  /* 값 폰트 크기 조정 */
                         font-weight: bold;
+                        text-align: center;
                         color: #000000;  /* 값 색상 변경 (선택 사항) */
                     }
                     </style>
