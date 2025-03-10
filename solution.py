@@ -62,6 +62,19 @@ else:
     # 데이터 필터링 ⚙️
     filtered_df = df[(df["날짜"] == selected_date) & (df["농장아이디"] == selected_farm)]
 
+    # 변수별 이모티콘 설정
+emoji_dict = {
+    "착유 소요 시간": "⏳",
+    "공기흐름": "🌬️",
+    "THI": "🌡️",
+    "습도(%)": "💧",
+    "전도도": "⚡",
+    "유단백": "🥛",
+    "유지방": "🧈",
+    "기온(℃)": "🌡️",
+    "온도": "🌞",
+    "착유회차": "🔢"
+}
     if not filtered_df.empty:
         numeric_cols = filtered_df.select_dtypes(include=[np.number]).columns
         if len(numeric_cols) > 0:
