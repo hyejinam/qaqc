@@ -114,58 +114,58 @@ if df is not None:
             )
 
         # 두 번째 열에 개체 정보 표시
-        with col2:
-            if not animal_info.empty:
-                info_cols = st.columns(4)
-                # 축종코드
-                with info_cols[0]:
-                    st.markdown(
-                        f"""
-                        <div style="text-align:center; font-size:20px;">
-                            <b><br>축종코드</b><br>
-                            {animal_info.iloc[0]['축종코드']}
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
-                # 제조사 아이디
-                with info_cols[1]:
-                    st.markdown(
-                        f"""
-                        <div style="text-align:center; font-size:20px;">
-                            <b><br>제조사 아이디</b><br>
-                            {animal_info.iloc[0]['제조사 아이디']}
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
-                # 착유횟수
-                with info_cols[2]:
-                    st.markdown(
-                        f"""
-                        <div style="text-align:center; font-size:20px;">
-                            <b><br>착유횟수</b><br>
-                            {milking_count}회
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
-                # 착유량
-                with info_cols[3]:
-                    st.markdown(
-                        f"""
-                        <div style="text-align:center; font-size:20px;">
-                            <b><br>착유량</b><br>
-                            {total_milking_volume}L
-                        </div>
-                        """,
-                        unsafe_allow_html=True
-                    )
-            else:
-                st.markdown(
-                    "<div style='text-align:center; font-size:22px;'>정보가 없습니다.</div>",
-                    unsafe_allow_html=True
-                )
+with col2:
+    if not animal_info.empty:
+        info_cols = st.columns(4)
+        # 축종코드
+        with info_cols[0]:
+            st.markdown(
+                f"""
+                <div style="text-align:center; font-size:20px;">
+                    <b><br>축종코드</b><br>
+                    <span style="font-size:30px;">{animal_info.iloc[0]['축종코드']}</span>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        # 제조사 아이디
+        with info_cols[1]:
+            st.markdown(
+                f"""
+                <div style="text-align:center; font-size:20px;">
+                    <b><br>제조사<br>아이디</b><br>
+                    <span style="font-size:30px;">{animal_info.iloc[0]['제조사 아이디']}</span>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        # 착유횟수
+        with info_cols[2]:
+            st.markdown(
+                f"""
+                <div style="text-align:center; font-size:20px;">
+                    <b><br>착유횟수</b><br>
+                    <span style="font-size:30px;">{milking_count}회</span>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+        # 착유량
+        with info_cols[3]:
+            st.markdown(
+                f"""
+                <div style="text-align:center; font-size:20px;">
+                    <b><br>착유량</b><br>
+                    <span style="font-size:30px;">{total_milking_volume}L</span>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+    else:
+        st.markdown(
+            "<div style='text-align:center; font-size:22px;'>정보가 없습니다.</div>",
+            unsafe_allow_html=True
+        )
 
 
 
