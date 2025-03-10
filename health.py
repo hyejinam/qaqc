@@ -36,8 +36,8 @@ variable_emojis = {
 
 
 # CSV 파일 경로
-file_path = './진짜찐최종데이터원본.csv'
-save_path = './uploaded_data.csv'
+file_path = '진짜찐최종데이터원본.csv'
+save_path = 'uploaded_data.csv'
 
 # CSV 파일 불러오기
 if os.path.exists(file_path):
