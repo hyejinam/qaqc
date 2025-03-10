@@ -15,16 +15,18 @@ if os.path.exists(DATA_FILE):  # 로컬 파일이 존재하면 불러오기
 else:
     st.warning(":경고: '진짜찐최종데이터원본.csv' 파일을 찾을 수 없습니다. 데이터를 확인해주세요.")
 if data is not None:
-     # 🏠 농장 선택 필터
-    if "농장아이디" in data.columns:
-        farms = data["농장아이디"].unique()
-        selected_farm = st.selectbox("🌾 농장 선택", farms)
-        farm_data = data[data["농장아이디"] == selected_farm]
-        # 📅 날짜 선택 필터 추가
-        if "착유시작일시" in farm_data.columns:
+    # 🏠 농장 선택 및 날짜 선택 필터 (한 행에 표시)
+    if "농장아이디" in data.columns and "착유시작일시" in data.columns:
+        col1, col2 = st.columns(2)
+        with col1:
+            farms = data["농장아이디"].unique()
+            selected_farm = st.selectbox("🌾 농장 선택", farms)
+            farm_data = data[data["농장아이디"] == selected_farm]
+        with col2:
             farm_data["착유시작일시"] = pd.to_datetime(farm_data["착유시작일시"])
             selected_date = st.date_input("📆 날짜 선택", farm_data["착유시작일시"].min())
             date_filtered_data = farm_data[farm_data["착유시작일시"].dt.date == selected_date]
+
    # 🥛 유지방, 유단백, 전도도 (총 착유량 대비 비율)
 if not date_filtered_data.empty:
     col1, col2, col3 = st.columns(3)
