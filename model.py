@@ -35,6 +35,7 @@ if not date_filtered_data.empty:
         .metric-label {
             font-size: 20px !important;  /* 라벨 폰트 크기 */
             font-weight: bold;
+            text-align: center;
         }
         .metric-value {
             font-size: 30px !important;  /* 값 폰트 크기 */
@@ -83,6 +84,7 @@ if not date_filtered_data.empty:
                     .metric-label {
                         font-size: 20px !important;  /* 라벨 폰트 크기 조정 */
                         font-weight: bold;
+                        text-align: center;
                     }
                     .metric-value {
                         font-size: 30px !important;  /* 값 폰트 크기 조정 */
