@@ -76,7 +76,7 @@ if not date_filtered_data.empty:
         #     selected_animal = st.selectbox("개체번호 선택", data["개체번호"].unique())
         #     animal_data = data[data["개체번호"] == selected_animal]
          # 🐄 개체번호 선택 방법 드롭다운으로 구현
-        if not date_filtered_data.empty and "개체번호" in date_filtered_data.columns:
+    if not date_filtered_data.empty and "개체번호" in date_filtered_data.columns:
         col1, col2 = st.columns(2)
         with col1:
             selected_search_method = st.selectbox("🔍 개체번호 선택 방법", ("개체선택", "검색"))
