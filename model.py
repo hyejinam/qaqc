@@ -6,14 +6,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 import os
 # 파일 경로
-DATA_FILE = 'uploaded_data.csv'
+DATA_FILE = '진짜찐최종데이터원본.csv'
 
 # 데이터 로드
 data = None
 if os.path.exists(DATA_FILE):  # 로컬 파일이 존재하면 불러오기
     data = pd.read_csv(DATA_FILE)
 else:
-    st.warning(":경고: 'uploaded_data.csv' 파일을 찾을 수 없습니다. 데이터를 확인해주세요.")
+    st.warning(":경고: '진짜찐최종데이터원본.csv' 파일을 찾을 수 없습니다. 데이터를 확인해주세요.")
 if data is not None:
      # 🏠 농장 선택 필터
     if "농장아이디" in data.columns:
