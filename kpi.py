@@ -270,13 +270,13 @@ with col2:
         col1, col2, col3 = st.columns(3)
         with col1:
             st.markdown('<h4 style="text-align:center;">🌡️ 기온</h4>', unsafe_allow_html=True)
-            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#FFD1DC; color:white; width:200px; height:200px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["기온(℃)"]:.1f}°C</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#FFD1DC; color:white; width:100px; height:100px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["기온(℃)"]:.1f}°C</div>', unsafe_allow_html=True)
         with col2:
             st.markdown('<h4 style="text-align:center;">💧 습도</h4>', unsafe_allow_html=True)
-            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#BDE4F4; color:white; width:200px; height:200px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["습도(%)"]:.1f}%</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#BDE4F4; color:white; width:100px; height:100px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["습도(%)"]:.1f}%</div>', unsafe_allow_html=True)
         with col3:
             st.markdown('<h4 style="text-align:center;">📈 THI</h4>', unsafe_allow_html=True)
-            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#C4E3CB; color:white; width:200px; height:200px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["THI"]:.1f}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#C4E3CB; color:white; width:100px; height:100px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["THI"]:.1f}</div>', unsafe_allow_html=True)
     
 
     # 날짜 및 시간 정보 표시 (둥근 네모 도형으로 표시, 크림색 배경 적용)
