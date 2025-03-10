@@ -195,8 +195,8 @@ if not filtered_df.empty:
                 warning_msg = "주의" if min_val > original_value or original_value > max_val else ""
                 emoji = variable_emojis.get(var, "")
                 cols[idx % 3].markdown(f"<h2 style='color: black; font-size: 24px;'>{emoji} {var}</h2>", unsafe_allow_html=True)
-                cols[idx % 3].write(f"<p style='font-size: 20px;text-align: center;'>최적범위: {min_val} ~ {max_val}</p>", unsafe_allow_html=True)
-                cols[idx % 3].write(f"<p style='font-size: 20px; color: {text_color};text-align: center;'>농장 평균값: {original_value:.2f}</p>", unsafe_allow_html=True)
+                cols[idx % 3].write(f"<p style='font-size: 20px;'>최적범위: {min_val} ~ {max_val}</p>", unsafe_allow_html=True)
+                cols[idx % 3].write(f"<p style='font-size: 20px; color: {text_color};'>농장 평균값: {original_value:.2f}</p>", unsafe_allow_html=True)
                 if warning_msg:
                     cols[idx % 3].write(f"<p style='font-size: 20px; color: red; font-weight: bold;'>⚠️ {warning_msg}</p>", unsafe_allow_html=True)
 else:
