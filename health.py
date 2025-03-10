@@ -109,7 +109,7 @@ if df is not None:
         with col1:
             st.image("cowow.png", width=500)
             st.markdown(
-                f"<h2 style='text-align:center; font-size:26px;'>개체번호: {selected_animal}</h2>",
+                f"<h2 style='text-align:center; font-size:20px;'>개체번호: {selected_animal}</h2>",
                 unsafe_allow_html=True
             )
 
@@ -132,7 +132,7 @@ if df is not None:
                 with info_cols[1]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:35px;">
+                        <div style="text-align:center; font-size:25px;">
                             <b><br>제조사 아이디</b><br>
                             {animal_info.iloc[0]['제조사 아이디']}
                         </div>
@@ -143,7 +143,7 @@ if df is not None:
                 with info_cols[2]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:35px;">
+                        <div style="text-align:center; font-size:25px;">
                             <b><br>착유횟수</b><br>
                             {milking_count}회
                         </div>
@@ -154,7 +154,7 @@ if df is not None:
                 with info_cols[3]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:35px;">
+                        <div style="text-align:center; font-size:25px;">
                             <b><br>착유량</b><br>
                             {total_milking_volume}L
                         </div>
