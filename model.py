@@ -33,11 +33,11 @@ if not date_filtered_data.empty:
         """
         <style>
         .metric-label {
-            font-size: 35px !important;  /* 라벨 폰트 크기 */
+            font-size: 20px !important;  /* 라벨 폰트 크기 */
             font-weight: bold;
         }
         .metric-value {
-            font-size: 38px !important;  /* 값 폰트 크기 */
+            font-size: 25px !important;  /* 값 폰트 크기 */
             font-weight: bold;
             color: #000000;  /* 값 색상 (선택 가능) */
         }
