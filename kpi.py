@@ -27,8 +27,8 @@ else:
 plt.rc('axes', unicode_minus=False)  # 마이너스 기호 깨짐 방지
 
 # 데이터 불러오기
-file_path = './진짜찐최종데이터원본.csv'
-save_path = './uploaded_data.csv'
+file_path = '진짜찐최종데이터원본.csv'
+save_path = 'uploaded_data.csv'
 if os.path.exists(file_path):
     df = pd.read_csv(file_path, encoding='utf-8')
 elif os.path.exists(save_path):
@@ -163,7 +163,7 @@ col1, col2 = st.columns([1, 1])
 
 # 🌍 지도 시각화 (1열)
 with col1:
-    shp_path = r"C:\Users\남혜지\OneDrive\ctprvn.shp"
+    shp_path = "ctprvn.shp"
     gdf_korea = gpd.read_file(shp_path).to_crs(epsg=4326)
     
 # 📍 농장 선택 시 해당 위치로 지도 확대 (기본은 한국 중심)
@@ -210,7 +210,7 @@ with col1:
     
 
     # 사용자 정의 아이콘 설정 (개체수에 따라 크기 조절)
-    icon_path = r"C:\Users\남혜지\OneDrive\cowicon.png"
+    icon_path = "cowicon.png"
    
     if not os.path.exists(icon_path):
         st.error("아이콘 이미지가 존재하지 않습니다. 올바른 파일 경로를 확인해주세요.")
