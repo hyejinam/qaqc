@@ -121,7 +121,7 @@ if df is not None:
                 with info_cols[0]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:25px;">
+                        <div style="text-align:center; font-size:20px;">
                             <b><br>축종코드</b><br>
                             {animal_info.iloc[0]['축종코드']}
                         </div>
@@ -132,8 +132,8 @@ if df is not None:
                 with info_cols[1]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:25px;">
-                            <b><br>제조사<br>아이디</b><br>
+                        <div style="text-align:center; font-size:20px;">
+                            <b><br>제조사 아이디</b><br>
                             {animal_info.iloc[0]['제조사 아이디']}
                         </div>
                         """,
@@ -143,7 +143,7 @@ if df is not None:
                 with info_cols[2]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:25px;">
+                        <div style="text-align:center; font-size:20px;">
                             <b><br>착유횟수</b><br>
                             {milking_count}회
                         </div>
@@ -154,7 +154,7 @@ if df is not None:
                 with info_cols[3]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:25px;">
+                        <div style="text-align:center; font-size:20px;">
                             <b><br>착유량</b><br>
                             {total_milking_volume}L
                         </div>
