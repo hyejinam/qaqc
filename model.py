@@ -65,10 +65,10 @@ if not date_filtered_data.empty:
         data["착유시작일시"] = pd.to_datetime(data["착유시작일시"])
         # 개체번호 선택 필터 추가
         if "개체번호" in data.columns:
-            selected_animal = st.selectbox(":암소2: 개체번호 선택", data["개체번호"].unique())
+            selected_animal = st.selectbox("개체번호 선택", data["개체번호"].unique())
             animal_data = data[data["개체번호"] == selected_animal]
             if not animal_data.empty:
-                # :흰색_확인_표시: 개체별 유지방, 유단백, 전도도 계산 (총 착유량 대비 비율)
+                #개체별 유지방, 유단백, 전도도 계산 (총 착유량 대비 비율)
                 animal_fat = (animal_data["유지방"].sum() / animal_data["착유량(L)"].sum()) * 100 if animal_data["착유량(L)"].sum() > 0 else 0
                 animal_protein = (animal_data["유단백"].sum() / animal_data["착유량(L)"].sum()) * 100 if animal_data["착유량(L)"].sum() > 0 else 0
                 min_conductivity, max_conductivity = 1.0, 15.0  # 원래 전도도 최소~최대 범위 (예시값)
@@ -101,12 +101,12 @@ if not date_filtered_data.empty:
                 with col3:
                     st.markdown('<div class="metric-label">🔌 전도도 개체 평균</div>', unsafe_allow_html=True)
                     st.markdown(f'<div class="metric-value">{animal_conductivity:.2f} mS/cm</div>', unsafe_allow_html=True)
-                # :흰색_확인_표시: 체온 원래 값 복구
+                # :체온 원래 값 복구
                 if "온도" in animal_data.columns:
                     min_temp, max_temp = 29.9, 42.6
                     animal_data["온도"] = animal_data["온도"] * (max_temp - min_temp) + min_temp
                 # :흰색_확인_표시: 개체 상태 모니터링 (혈액흐름, 체온, THI) 3개의 게이지 차트 유지
-                st.subheader(":위성_안테나: 개체 상태 모니터링")
+                st.subheader("개체 상태 모니터링")
                 if "혈액흐름" in animal_data.columns and "온도" in animal_data.columns and "THI" in animal_data.columns:
                     state_data = animal_data[["혈액흐름", "온도", "THI"]].mean()
                     col1, col2, col3 = st.columns(3)
