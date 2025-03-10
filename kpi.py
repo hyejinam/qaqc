@@ -177,7 +177,7 @@ with col1:
         zoom_level = 7
 
 # 지도 생성 (선택된 농장에 맞게 중심과 확대 설정)
-    m = folium.Map(location=map_center, zoom_start=zoom_level, tiles="OpenStreetMap", max_bounds=True, width='60%', height='70%')
+    m = folium.Map(location=map_center, zoom_start=zoom_level, tiles="OpenStreetMap", max_bounds=True, width='60%', height='80%')
 
 
 
