@@ -26,8 +26,8 @@ optimal_variables = {
     20278: {"착유 소요 시간": (3, 16.78), "공기흐름": (0.80, 6.90), "THI": (61.289, 93.776), "전도도": (3.79, 10), "유지방": (0.2, 6.9)}
 }
 # 데이터 불러오기
-file_path = './진짜찐최종데이터원본.csv'
-save_path = './uploaded_data.csv'
+file_path = '진짜찐최종데이터원본.csv'
+save_path = 'uploaded_data.csv'
 if os.path.exists(file_path):
     df = pd.read_csv(file_path, encoding='utf-8')
 elif os.path.exists(save_path):
