@@ -279,8 +279,8 @@ with col2:
     
 
     # 날짜 및 시간 정보 표시 (둥근 네모 도형으로 표시, 크림색 배경 적용)
-        st.markdown('<div style="height:80px;"></div>', unsafe_allow_html=True)  # 간격 추가
-        st.markdown(f'<div style="text-align:center; font-size:30px; padding:20px; border-radius:15px; background-color:#F5F5F5; color:black; width:800px; margin:auto; display:flex; align-items:center; justify-content:center;">{selected_date} {selected_hour:02d}:00 경</div>', unsafe_allow_html=True)
+        st.markdown('<div style="height:70px;"></div>', unsafe_allow_html=True)  # 간격 추가
+        st.markdown(f'<div style="text-align:center; font-size:30px; padding:20px; border-radius:15px; background-color:#F5F5F5; color:black; width:500px; margin:auto; display:flex; align-items:center; justify-content:center;">{selected_date} {selected_hour:02d}:00 경</div>', unsafe_allow_html=True)
     else:
         st.warning("선택한 시간에 해당하는 데이터가 없습니다.")
 
