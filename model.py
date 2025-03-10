@@ -27,17 +27,6 @@ if data is not None:
             selected_date = st.date_input("📆 날짜 선택", farm_data["착유시작일시"].min())
             date_filtered_data = farm_data[farm_data["착유시작일시"].dt.date == selected_date]
 
- # 🐄 개체번호 검색 방법 및 선택 필터 (한 행에 표시)
-    if not date_filtered_data.empty and "개체번호" in date_filtered_data.columns:
-        col1, col2 = st.columns(2)
-        with col1:
-            search_method = st.radio("개체번호 검색방법", ("선택", "직접 입력"))
-        with col2:
-            if search_method == "선택":
-                selected_animal = st.selectbox("개체번호 선택", date_filtered_data["개체번호"].unique())
-            else:
-                selected_animal = st.text_input("개체번호 입력")
-
 
    # 🥛 유지방, 유단백, 전도도 (총 착유량 대비 비율)
 if not date_filtered_data.empty:
@@ -79,16 +68,36 @@ if not date_filtered_data.empty:
                 st.warning(":x: 선택한 날짜에 대한 데이터가 없습니다.")
     if "착유시작일시" in data.columns:
         data["착유시작일시"] = pd.to_datetime(data["착유시작일시"])
-        # 개체번호 선택 필터 추가
-        if "개체번호" in data.columns:
-            selected_animal = st.selectbox("개체번호 선택", data["개체번호"].unique())
-            animal_data = data[data["개체번호"] == selected_animal]
+
+
+        
+        # # 개체번호 선택 필터 추가
+        # if "개체번호" in data.columns:
+        #     selected_animal = st.selectbox("개체번호 선택", data["개체번호"].unique())
+        #     animal_data = data[data["개체번호"] == selected_animal]
+         # 🐄 개체번호 선택 방법 드롭다운으로 구현
+        if not date_filtered_data.empty and "개체번호" in date_filtered_data.columns:
+        col1, col2 = st.columns(2)
+        with col1:
+            selected_search_method = st.selectbox("🔍 개체번호 선택 방법", ("개체선택", "검색"))
+        with col2:
+            if selected_search_method == "개체선택":
+                selected_animal = st.selectbox("개체번호 선택", date_filtered_data["개체번호"].unique())
+            else:
+                selected_animal = st.text_input("개체번호 입력")
+            
+            
+            
+            
             if not animal_data.empty:
+            
                 #개체별 유지방, 유단백, 전도도 계산 (총 착유량 대비 비율)
                 animal_fat = (animal_data["유지방"].sum() / animal_data["착유량(L)"].sum()) * 100 if animal_data["착유량(L)"].sum() > 0 else 0
                 animal_protein = (animal_data["유단백"].sum() / animal_data["착유량(L)"].sum()) * 100 if animal_data["착유량(L)"].sum() > 0 else 0
                 min_conductivity, max_conductivity = 1.0, 15.0  # 원래 전도도 최소~최대 범위 (예시값)
                 animal_conductivity = animal_data["전도도"].mean() * (max_conductivity - min_conductivity) + min_conductivity
+               
+                
                 # :흰색_확인_표시: 개체별 유지방, 유단백, 전도도 표시
                 col1, col2, col3 = st.columns(3)
                 # 스타일 적용 (폰트 크기 키우기)
