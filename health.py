@@ -121,7 +121,7 @@ if df is not None:
                 with info_cols[0]:
                     st.markdown(
                         f"""
-                        <div style="text-align:center; font-size:35px;">
+                        <div style="text-align:center; font-size:25px;">
                             <b><br>축종코드</b><br>
                             {animal_info.iloc[0]['축종코드']}
                         </div>
@@ -133,7 +133,7 @@ if df is not None:
                     st.markdown(
                         f"""
                         <div style="text-align:center; font-size:25px;">
-                            <b><br>제조사 아이디</b><br>
+                            <b><br>제조사<br>아이디</b><br>
                             {animal_info.iloc[0]['제조사 아이디']}
                         </div>
                         """,
