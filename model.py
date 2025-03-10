@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import os
 # 파일 경로
-DATA_FILE = './uploaded_data.csv'
+DATA_FILE = 'uploaded_data.csv'
 
 # 데이터 로드
 data = None
