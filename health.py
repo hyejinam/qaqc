@@ -133,7 +133,7 @@ with col2:
             st.markdown(
                 f"""
                 <div style="text-align:center; font-size:20px;">
-                    <b><br>제조사<br>아이디</b><br>
+                    <b><br>제조사 아이디</b><br>
                     <span style="font-size:30px;">{animal_info.iloc[0]['제조사 아이디']}</span>
                 </div>
                 """,
