@@ -65,7 +65,7 @@ if df is not None:
         """
         <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:400px;">
             <!-- 동그란 배경과 이미지 -->
-            <div style="position: relative; width: 100px; height: 100px; border-radius: 50%; background-color: #BFDDB3; overflow: hidden;">
+            <div style="position: relative; width: 200px; height: 200px; border-radius: 50%; background-color: #BFDDB3; overflow: hidden;">
                 <img src="data:image/png;base64,{image_base64}" style="width: 100%; height: 100%; object-fit: cover;">
                 <!-- 로딩 애니메이션 (흰색 막대기) -->
                 <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; gap: 5px;">
