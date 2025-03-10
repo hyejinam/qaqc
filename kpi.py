@@ -11,7 +11,7 @@ from streamlit_folium import folium_static
 from folium import CustomIcon
 import streamlit as st
 import time
-import koreanize_matplotlib
+
 from PIL import Image
 
 
