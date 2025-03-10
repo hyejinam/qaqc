@@ -182,7 +182,6 @@ with col1:
 
 
     # # 지도 생성
-    # # m = folium.Map(location=[36.5, 127.5], zoom_start=7, tiles="cartodbpositron", max_bounds=True) # 소희님이 만들어주신거_근데 영어어
     # m = folium.Map(location=[36.5, 127.5], zoom_start=7, tiles="OpenStreetMap", max_bounds=True) # 한글로는 나오는데 바다나옴
 
 
@@ -270,13 +269,13 @@ with col2:
         col1, col2, col3 = st.columns(3)
         with col1:
             st.markdown('<h4 style="text-align:center;">🌡️ 기온</h4>', unsafe_allow_html=True)
-            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#FFD1DC; color:white; width:100px; height:100px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["기온(℃)"]:.1f}°C</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align:center; font-size:30px; padding:30px; border-radius:50%; background-color:#FFD1DC; color:white; width:150px; height:150px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["기온(℃)"]:.1f}°C</div>', unsafe_allow_html=True)
         with col2:
             st.markdown('<h4 style="text-align:center;">💧 습도</h4>', unsafe_allow_html=True)
-            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#BDE4F4; color:white; width:100px; height:100px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["습도(%)"]:.1f}%</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align:center; font-size:30px; padding:30px; border-radius:50%; background-color:#BDE4F4; color:white; width:150px; height:150px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["습도(%)"]:.1f}%</div>', unsafe_allow_html=True)
         with col3:
             st.markdown('<h4 style="text-align:center;">📈 THI</h4>', unsafe_allow_html=True)
-            st.markdown(f'<div style="text-align:center; font-size:40px; padding:30px; border-radius:50%; background-color:#C4E3CB; color:white; width:100px; height:100px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["THI"]:.1f}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div style="text-align:center; font-size:30px; padding:30px; border-radius:50%; background-color:#C4E3CB; color:white; width:150px; height:150px; margin:auto; display:flex; align-items:center; justify-content:center;">{row["THI"]:.1f}</div>', unsafe_allow_html=True)
     
 
     # 날짜 및 시간 정보 표시 (둥근 네모 도형으로 표시, 크림색 배경 적용)
