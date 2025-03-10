@@ -86,7 +86,18 @@ if not date_filtered_data.empty:
             else:
                 selected_animal = st.text_input("개체번호 입력")
             
-            
+             # 개체번호 데이터 필터링
+        if selected_animal:
+            animal_data = date_filtered_data[date_filtered_data["개체번호"] == selected_animal]
+            if not animal_data.empty:
+                st.write(f"선택된 개체번호: {selected_animal}")
+            else:
+                st.warning(":경고: 선택한 개체의 데이터가 없습니다.")
+        else:
+            st.warning(":경고: 올바른 개체번호를 입력해주세요.")
+
+
+
             
             
             if not animal_data.empty:
